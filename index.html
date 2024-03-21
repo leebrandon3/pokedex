@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Pokedex</title>
+        <script defer src="./index.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Pokedex</h1>
+        <form id="pokemonForm">
+            <label for="pokemon">Pokemon:</label>
+            <input type="text" name="pokemon" id="pokemon" placeholder="Pikachu">
+            <br><br>
+            <input type="submit" name="submit" value="Search Pokedex">
+        </form>
+        <br><br>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Types</th>
+                <th>Stats</th>
+                <th>Sprites (Click for sound!)</th>
+                <!-- <th>Cries</th> -->
+            </tr>
+            <tr>
+                <td id="name"></td>
+                <td id="type"></td>
+                <td id="stats">
+                    <ul>
+                        <li id="hp"></li>
+                        <li id="atk"></li>
+                        <li id="def"></li>
+                        <li id="sp-atk"></li>
+                        <li id="sp-def"></li>
+                        <li id="spd"></li>
+                    </ul>
+                </td>
+                <td>
+                    <img src="" alt="error cannot load" id="sprite">
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
