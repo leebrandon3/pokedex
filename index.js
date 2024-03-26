@@ -31,7 +31,7 @@ submit.addEventListener("submit", event => {
     getRequest(pokemon)
 })
 
-// Cycles through pokemon based on their ID using the left/right arrow keys
+// Listens for keydown event. Cycles through pokemon based on their ID using the left/right arrow keys
 document.body.addEventListener("keydown",event => {
     if (event.key == "ArrowLeft"){
         clearMoves()
@@ -43,8 +43,13 @@ document.body.addEventListener("keydown",event => {
     }
 })
 
-// Clicking on a stat opens an alert that provides more information on the stat.
+// Listens for clicking event on a stat, opens an alert that provides more information on the stat.
 document.getElementById("stats").addEventListener("click", event => {
+    /**
+     * Sends an alert on the page based on clicking event
+     * @param {string} id 
+     * @param {string} text 
+     */
     function alertStat(id, text){
         if(event.target.id == id){
             alert(text)
@@ -58,13 +63,13 @@ document.getElementById("stats").addEventListener("click", event => {
     alertStat("spd", "The Speed stat determines the order of Pokémon that can act in battle. If Pokémon are moving with the same priority, Pokémon with higher Speed at the start of any turn will generally make a move before ones with lower Speed; in the case that two Pokémon have the same Speed, one of them will randomly go first.")
 })
 
-// Plays the displayed pokemons cry when clicking on the sprite image
+// Listens for click event on image, plays the displayed pokemons cry when clicking on the sprite image
 document.querySelector("#sprite").addEventListener("click", () => {
     const playAudio = new Audio(pokemonCries)
     playAudio.play()
 })
 
-// Listens for mouse clicks on moves and updates text content of moves description
+// Listens for click event on moves and updates text content of moves description
 function moveEvent(move){
     move.addEventListener("click", event => {
         const selectedMove = movesList.find(element => element.name == event.target.textContent)
@@ -80,7 +85,11 @@ function moveEvent(move){
     })
 }
 
-
+/**
+ * Updates move description
+ * @param {string} moveAtt 
+ * @param {string} fetchAtt 
+ */
 function updateMove(moveAtt, fetchAtt){
     console.log(moveAtt, fetchAtt)
     document.getElementById(moveAtt).textContent = fetchAtt

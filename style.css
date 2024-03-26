@@ -18,6 +18,8 @@ ul {
 }
 div.follow {
     position: fixed;
+    padding-left: 20%;
+    padding-top: 5%;
 }
 #move-desc {
     vertical-align: top;
